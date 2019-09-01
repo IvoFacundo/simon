@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simon Dice</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Roboto';
+                font-weight: 300
+            }
+          body {
+            margin: 0;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+          }
+
+          .gameboard {
+            height: 100vh;
+            width: 100vh;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            max-height: 60vh;
+            max-width: 60vh;
+          }
+
+          .stats {
+            display: none;
+            position: absolute;
+            height: 9vh;
+            width: 61vh;
+            top: 10px;
+            left: 10px;
+            border-radius: 4px;
+            background: #ffffff;
+            font-size: 150%;
+            font-family: arial;
+          }
+
+          .color {
+            width: 50%;
+            height: 50%;
+            display: inline-block;
+          }
+
+          .left {
+            float: left;
+          }
+
+          .right {
+            float: left;
+          }
+
+          .celeste {
+            background: #22a6b3;
+          }
+
+          .celeste.light {
+            background: #7ed6df;
+          }
+
+          .violeta {
+            background: #be2edd;
+          }
+
+          .violeta.light {
+            background: #e056fd;
+          }
+
+          .naranja {
+            background: #f0932b;
+          }
+
+          .naranja.light {
+            background: #ffbe76;
+          }
+
+          .verde {
+            background: #6ab04c;
+          }
+
+          .verde.light {
+            background: #badc58;
+          }
+
+            .btn-start {
+                border: #000 2px solid;
+                outline: none;
+                cursor: pointer;
+                width: 300px;
+                height: 100px;
+                background: #ff4d66;
+                border-radius: 5px;
+                color: #fdfeff;
+                font-size: 2rem;
+                position: absolute;
+                top: calc(50% - 50px);
+                left: calc(50% - 150px);
+            }
+            .btn-start:hover {
+                background: #fb5e74
+            }
+
+
+          .hide {
+            display: none;
+          }
+
+          .show {
+            display: block;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="gameboard">
+            <div id="celeste" class="color celeste left" data-color="celeste"></div>
+            <div id="violeta" class="color violeta right" data-color="violeta"></div>
+            <div id="naranja" class="color naranja left" data-color="naranja"></div>
+            <div id="verde" class="color verde right" data-color="verde"></div>
+            <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
+        </div>
+        <div class="stats" align="center">
+            Nivel actual: <div id="nivel"></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
